@@ -26,9 +26,9 @@ app.get('/api/hello', function (req, res) {
 
 app.get('/api/whoami', function (req, res) {
 
-  const ip = req.headers['cf-connecting-ip'] || req.headers['x-real-ip'] || req.headers['x-forwarded-for'] || req.socket.remoteAddress || ''
+  const ipaddress = req.headers['cf-connecting-ip'] || req.headers['x-real-ip'] || req.headers['x-forwarded-for'] || req.socket.remoteAddress || ''
   res.json({
-    ip,
+    ipaddress,
     language: req.headers['accept-language'],
     software: req.headers['user-agent']
   })
